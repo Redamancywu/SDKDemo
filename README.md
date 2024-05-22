@@ -14,19 +14,21 @@
 广告形式为聚合广告，使用的广告类型需要在 `hi_game_config.json` 中配置参数和 class 路径。
 
 ### 展示 Banner 广告
-
+   ```kotlin
 HiGameSDK.getInstance().showBanner()
-
+  ```kotlin
 HiGameSDK.getInstance().closeBanner()  关闭banner
 ### 插屏和激励视频
-
+```kotlin
 HiGameSDK.getInstance().showInterstitial()
 HiGameSDK.getInstance().showRewardVideo()
 
 ### 多渠道登录
+```kotlin
  HiGameSDK.getInstance().Login(this)  //目前只实现了Google登录  其他登录方式待集成实现  只需要调用Login方法即可实现登录
- 
+ ```kotlin
 ### 支付
+```kotlin
  HiGameSDK.getInstance().Pay(this,payParams,object :IPayCallBack{
             override fun onPaySuccess(orderId: String?) {
                 TODO("Not yet implemented")
@@ -40,6 +42,7 @@ HiGameSDK.getInstance().showRewardVideo()
  })
  
 ### 自定义上报
+```kotlin
     fun onCustomEvent(eventName: String?, eventData: HashMap<String?, Any?>?) {
         // 直接调用 HiGameSDK 的 onCustomEvent 方法，并传入方法参数中的 eventName 和 eventData
         HiGameSDK.getInstance().onCustomEvent(eventName, eventData)

@@ -24,10 +24,9 @@ HiGameSDK.getInstance().showInterstitial()
 HiGameSDK.getInstance().showRewardVideo()
 
 ### 多渠道登录
-
  HiGameSDK.getInstance().Login(this)  //目前只实现了Google登录  其他登录方式待集成实现  只需要调用Login方法即可实现登录
-### Google支付
-
+ 
+### 支付
  HiGameSDK.getInstance().Pay(this,payParams,object :IPayCallBack{
             override fun onPaySuccess(orderId: String?) {
                 TODO("Not yet implemented")
@@ -39,6 +38,7 @@ HiGameSDK.getInstance().showRewardVideo()
                 TODO("Not yet implemented")
             }
  })
+ 
 ### 自定义上报
     fun onCustomEvent(eventName: String?, eventData: HashMap<String?, Any?>?) {
         // 直接调用 HiGameSDK 的 onCustomEvent 方法，并传入方法参数中的 eventName 和 eventData
